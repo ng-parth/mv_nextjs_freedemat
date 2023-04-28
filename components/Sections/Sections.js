@@ -29,7 +29,7 @@ const Sections = () => {
     <div className="row">
       {sections.map((s, index) => {
         if (index % 2 === 0) {
-          return <div className="col-sm-12">
+          return <div className="col-sm-12" key={index}>
               <div className={`card ${s.cardBorderClass}`}>
               <div className="row g-0">
                 <div className="col-md-8">
@@ -44,7 +44,7 @@ const Sections = () => {
             </div>
           </div>
         } else {
-          return <div className="col-sm-12">
+          return <div className="col-sm-12" key={index}>
             <div className={`card ${s.cardBorderClass}`}>
               <div className="row g-0">
               <div className={`col-md-4 ${s.imageBgClass}`}></div>
