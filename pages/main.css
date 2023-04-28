@@ -3,8 +3,13 @@
 }
 
 body {
-    /*padding-top: 72px;*/
+    background-color: #f2f3f8;
     padding: 25px;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: auto;
 }
 
 .nav-link.active {
@@ -21,7 +26,7 @@ body {
 #heroCarousel .carousel-item {
     /*text-align: center;*/
     /*width: 100%;*/
-    height: 200px;
+    /* height: 200px; */
     /*margin: auto;*/
     border-radius: 8px ;
 }
@@ -29,6 +34,11 @@ body {
     padding: 20px 0;
     border-radius: 8px;
 }
-
+.hero-carousel img.carousel-banner {
+    width: 100%;
+}
 
 .sections .card { margin-bottom: 20px; }
+.sections .text-white {
+    color: white;
+}
