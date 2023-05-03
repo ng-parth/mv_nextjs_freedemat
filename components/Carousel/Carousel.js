@@ -1,14 +1,14 @@
 const banners = [
     {
-        url: '/assets/images/banner-1.jpg',
+        url: '/assets/images/mbanner-1.jpg',
         altText: 'finance banner'
     },
     {
-        url: '/assets/images/banner-2.jpg',
+        url: '/assets/images/mbanner-2.jpg',
         altText: 'planning banner'
     },
     {
-        url: '/assets/images/banner-3.jpg',
+        url: '/assets/images/mbanner-3.jpg',
         altText: 'debt banner'
     },
 ]
