@@ -42,3 +42,12 @@ body {
 .sections .text-white {
     color: white;
 }
+
+.services img {
+    padding: 20px;
+}
+
+.services .card {
+    margin-bottom: 25px;
+    --bs-bg-opacity: 0.3;
+}

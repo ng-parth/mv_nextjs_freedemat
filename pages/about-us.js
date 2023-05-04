@@ -1,8 +1,8 @@
 import NavBar from "../components/NavBar/NavBar"
 import Sections from "../components/Sections/Sections";
+import { FIRM_NAME } from "../services/constants";
 
 const AboutUs = props => {
-    const FIRM_NAME = 'Free Demat A/C Services'
     const sections = [
         {
             title: 'ABOUT US', 
