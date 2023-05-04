@@ -12,7 +12,10 @@ function NavBar(props) {
 
     return <nav className="navbar fixed-top navbar-expand-lg" style={{backgroundColor: '#e3f2fd', boxShadow: '0 5px 5px #e1e1e1'}}>
     <div className="container-fluid">
-      <Link className="navbar-brand" href="/">Free Demat A/C</Link>
+      <Link className="navbar-brand" href="/">
+        {/* Free Demat A/C */}
+        <img className="nav-logo" src="./assets/logos/Free-Demat-AC.jpg" alt="main logo" />
+      </Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>

@@ -4,7 +4,7 @@ import { SERVICES } from "../services/constants";
 const Services = props => {
     return <div className="main-container">
         <NavBar activeLink="services" />
-        <h1>Our Services</h1>
+        <h1 className="page-head">Our Services</h1>
         <div class="row services">
             {
                 SERVICES.map(s => <div class="col-sm-6" key={s.key}>

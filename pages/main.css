@@ -1,5 +1,5 @@
 .main-container {
-    padding-top: 40px;
+    padding-top: 65px;
 }
 
 body {
@@ -10,6 +10,14 @@ body {
 .main-container {
     max-width: 1200px;
     margin: auto;
+}
+
+.nav-logo {
+    height: 50px;
+}
+
+.page-head {
+    padding: 10px 0;
 }
 
 .nav-link.active {

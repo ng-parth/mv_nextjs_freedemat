@@ -5,7 +5,7 @@ import { FIRM_NAME } from "../services/constants";
 const AboutUs = props => {
     const sections = [
         {
-            title: 'ABOUT US', 
+            title: `What is ${FIRM_NAME}?`, 
             details: `
             ${FIRM_NAME} is a comprehensive financial consulting firm that offers various finanacial services to help clients manage their investments more efficiently. With ${FIRM_NAME}'s financial services, clients can:<br />
             <br/>- <b>Open a Demat Account</b>: ${FIRM_NAME} offers a hassle-free process to open a demat account, which is necessary to hold and trade securities in India.
@@ -24,7 +24,7 @@ const AboutUs = props => {
     ]
     return <div className="main-container">
         <NavBar activeLink="aboutUs" />
-        {/* <h2>About Us</h2> */}
+        <h1 className="page-head">About Us</h1>
         <Sections sectionData={sections}/>
     </div>
 }
