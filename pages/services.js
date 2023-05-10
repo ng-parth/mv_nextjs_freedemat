@@ -5,9 +5,9 @@ const Services = props => {
     return <div className="main-container">
         <NavBar activeLink="services" />
         <h1 className="page-head">Our Services</h1>
-        <div class="row services">
+        <div className="row services">
             {
-                SERVICES.map(s => <div class="col-sm-6" key={s.key}>
+                SERVICES.map(s => <div className="col-sm-6" key={s.key}>
                     <div className={`card ${s.cardBorderClass}`}>
                         <div className="card-header"><h5>{s.title}</h5></div>
                         <img src="http://via.placeholder.com/640x360" className="card-img-top" alt="..." />

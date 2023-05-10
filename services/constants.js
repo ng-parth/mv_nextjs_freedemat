@@ -38,3 +38,30 @@ export const SERVICES = [
 
 ];
 
+
+export const INQUIRY_SUBJECTS = [
+    {
+        key: 'dematServices',
+        title: 'Open Demat A/C or related services',
+    },
+    {
+        key: 'iepf',
+        title: 'Recovery of lost shares from IEPF',
+    },
+    {
+        key: 'portfolioManagement',
+        title: 'Portfolio Management',
+    },
+    {
+        key: 'algoTrading',
+        title: 'Automated/Algo Trading',
+    },
+    {
+        key: 'taxManagement',
+        title: 'Tax Planning or related services',
+    },
+    {
+        key: 'other',
+        title: 'Any other query',
+    },
+];
