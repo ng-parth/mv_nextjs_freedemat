@@ -14,7 +14,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "lint:write": "next lint --cache --fix"
   },
   "author": "Parth Mistry",
   "engines": {
@@ -23,6 +25,13 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "8.39.0",
-    "eslint-config-next": "13.3.1"
+    "eslint-config-next": "13.3.1",
+    "eslint-config-prettier": "^8.8.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "prettier": "2.8.8"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
   }
 }
