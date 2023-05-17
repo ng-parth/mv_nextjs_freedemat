@@ -4,17 +4,39 @@ import Script from 'next/script';
 import './main.css';
 
 export default function MyApp({ Component, pageProps }) {
-    return <>
+  return (
+    <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/app-icons/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/app-icons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/app-icons/favicon-16x16.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/assets/app-icons/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/assets/app-icons/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/assets/app-icons/favicon-16x16.png"
+        />
         <link rel="manifest" href="/assets/app-icons/site.webmanifest" />
-        <link rel="mask-icon" href="/assets/app-icons/safari-pinned-tab.svg" color="#5bbad5" />
+        <link
+          rel="mask-icon"
+          href="/assets/app-icons/safari-pinned-tab.svg"
+          color="#5bbad5"
+        />
         <link rel="shortcut icon" href="/assets/app-icons/favicon.ico" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="msapplication-config" content="/assets/app-icons/browserconfig.xml" />
+        <meta name="msapplication-TileColor" content="#00aba9" />
+        <meta
+          name="msapplication-config"
+          content="/assets/app-icons/browserconfig.xml"
+        />
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <Script
@@ -23,5 +45,6 @@ export default function MyApp({ Component, pageProps }) {
         crossOrigin="anonymous"
       />
       <Component {...pageProps} />
-    </> 
+    </>
+  );
 }

@@ -1,6 +1,6 @@
 {
-    "name": "Free Demat Services",
-    "short_name": "Free Demat Services",
+    "name": "Free Demat Services Online",
+    "short_name": "Free Demat Services Online",
     "icons": [
         {
             "src": "/assets/app-icons/android-chrome-192x192.png",
@@ -8,8 +8,8 @@
             "type": "image/png"
         },
         {
-            "src": "/assets/app-icons/android-chrome-384x384.png",
-            "sizes": "384x384",
+            "src": "/assets/app-icons/android-chrome-512x512.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
