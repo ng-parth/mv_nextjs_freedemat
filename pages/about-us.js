@@ -1,8 +1,12 @@
 import NavBar from '../components/NavBar/NavBar';
 import Sections from '../components/Sections/Sections';
-import { FIRM_NAME } from '../services/constants';
+import StickToBottom from '../components/StickToBottom/StickToBottom';
+import { FIRM_NAME, OPEN_DEMAT_LINK } from '../services/constants';
+import Head from 'next/head';
 
 const AboutUs = (props) => {
+  const title = `About ${FIRM_NAME}`;
+  const description = `Know more about services and team at ${FIRM_NAME}`;
   const sections = [
     {
       title: `What is ${FIRM_NAME}?`,
@@ -25,9 +29,20 @@ const AboutUs = (props) => {
   ];
   return (
     <div className="main-container">
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} key="desc" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta
+          property="og:image"
+          content="/assets/images/demat-ac-services.jpeg"
+        />
+      </Head>
       <NavBar activeLink="aboutUs" />
       <h1 className="page-head">About Us</h1>
       <Sections sectionData={sections} />
+      <StickToBottom ctaLink={OPEN_DEMAT_LINK} cta="Open Free Demat Account" />
     </div>
   );
 };

@@ -1,56 +1,62 @@
-import React from "react";
-import NavBar from "../components/NavBar/NavBar";
-import { INQUIRY_SUBJECTS, CONTACT_ITEMS } from "../services/constants";
+import React from 'react';
+import NavBar from '../components/NavBar/NavBar';
+import {
+  INQUIRY_SUBJECTS,
+  CONTACT_ITEMS,
+  FIRM_NAME,
+} from '../services/constants';
+import Head from 'next/head';
 
 const ContactUs = (props) => {
+  const title = `Contact ${FIRM_NAME}`;
+  const description = `Get in touch with ${FIRM_NAME} for your demat and IEPF related queries.`;
   const [isFormDisabled, setFormDisabled] = React.useState(false);
   const [showFormMessage, setShowFormMessage] = React.useState(null);
-  const FORM = "inquiryForm";
+  const FORM = 'inquiryForm';
   const validateAndSubmit = async (ev) => {
     ev.preventDefault();
     ev.stopPropagation();
     const form = document.getElementById(FORM);
     if (form.checkValidity()) {
-      form.classList.add("was-validated");
-      const formElems = ["name", "email", "phoneNo", "inquirySubject", "query"];
+      form.classList.add('was-validated');
+      const formElems = ['name', 'email', 'phoneNo', 'inquirySubject', 'query'];
       setFormDisabled(true);
       const formValues = {};
-      debugger;
       formElems.map((id) => {
         const val = document.getElementById(id)?.value;
         formValues[id] = val;
       });
-      fetch("/api/post-inquiry", {
-        method: "POST",
+      fetch('/api/post-inquiry', {
+        method: 'POST',
         body: JSON.stringify(formValues),
       })
         .then(async (rawResp) => {
           const successMessage = {
             isSuccess: true,
-            header: "YaY! Your query is raised! :)",
+            header: 'YaY! Your query is raised! :)',
             message:
-              "Hurray!! Your query has been raised with concerned team. Our executive will get back to you soon.",
-            textClass: "success",
+              'Hurray!! Your query has been raised with concerned team. Our executive will get back to you soon.',
+            textClass: 'success',
           };
           const failureMessage = {
             isSuccess: false,
             header: "OOPS! Fail to raise your query! :'(",
             message:
-              "Due to some technical issues, we cannot raise your query with our team. Please try again later or reach out to our team on mentioned email or phone. ",
-            textClass: "danger",
+              'Due to some technical issues, we cannot raise your query with our team. Please try again later or reach out to our team on mentioned email or phone. ',
+            textClass: 'danger',
           };
           const resp = await rawResp.json();
           if (rawResp.ok) {
-            console.log("Form Post Success: ");
+            console.log('Form Post Success: ');
             setShowFormMessage(successMessage);
           } else {
-            console.log("Internal error: ", resp);
+            console.log('Internal error: ', resp);
             setShowFormMessage(failureMessage);
           }
           setFormDisabled(false);
         })
         .catch((e) => {
-          console.log("Failed to send email: ", e);
+          console.log('Failed to send email: ', e);
           setShowFormMessage(failureMessage);
         });
     }
@@ -58,6 +64,13 @@ const ContactUs = (props) => {
 
   return (
     <div className="main-container">
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} key="desc" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="/assets/images/iepf.jpeg" />
+      </Head>
       <NavBar activeLink="contactUs" />
       <h1 className="page-head">Contact Us</h1>
       <div className="row">

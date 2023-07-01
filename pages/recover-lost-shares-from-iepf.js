@@ -1,8 +1,12 @@
 import NavBar from '../components/NavBar/NavBar';
 import Sections from '../components/Sections/Sections';
+import StickToBottom from '../components/StickToBottom/StickToBottom';
 import { FIRM_NAME } from '../services/constants';
+import Head from 'next/head';
 
 const Iepf = (props) => {
+  const title = `Recover Lost Shares with ${FIRM_NAME}`;
+  const description = `Recover lost shares, open Free Demat A/C and look through other specialized services`;
   const sections = [
     {
       title: `What is IEPF and how to recover lost shares?`,
@@ -31,8 +35,24 @@ const Iepf = (props) => {
   return (
     <div className="main-container iepf-main-page">
       <NavBar activeLink="iepf" />
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} key="desc" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta
+          property="og:image"
+          content="/assets/images/demat-ac-services.jpeg"
+        />
+      </Head>
       <h1 className="page-head">Recover Lost Shares From IEPF</h1>
       <Sections sectionData={sections} />
+      <StickToBottom
+        cta="Get In Touch"
+        target="_self"
+        ctaLink="/contact-us"
+        ctaClass="btn-warning"
+      />
     </div>
   );
 };
