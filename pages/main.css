@@ -56,6 +56,12 @@ body {
   padding: 20px;
 }
 
+@media screen and (min-width: 768px) {
+  .services img {
+    height: 300px;
+  }
+}
+
 .services .card {
   margin-bottom: 25px;
   --bs-bg-opacity: 0.3;
@@ -63,4 +69,8 @@ body {
 
 .contact-items a {
   color: var(--bs-list-group-color);
+}
+
+.iepf-main-page {
+  --bs-bg-opacity: 0.3;
 }

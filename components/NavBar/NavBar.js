@@ -1,18 +1,23 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 function NavBar(props) {
-  const { activeLink = "home" } = props;
+  const { activeLink = 'home' } = props;
   const navItems = [
-    { key: "home", title: "Home", link: "/" },
-    { key: "aboutUs", title: "About Us", link: "/about-us" },
-    { key: "services", title: "Services", link: "/services" },
-    { key: "contactUs", title: "Contact Us", link: "/contact-us" },
+    { key: 'home', title: 'Home', link: '/' },
+    { key: 'aboutUs', title: 'About Us', link: '/about-us' },
+    { key: 'services', title: 'Services', link: '/services' },
+    {
+      key: 'iepf',
+      title: 'Recover Lost Shares',
+      link: '/recover-lost-shares-from-iepf',
+    },
+    { key: 'contactUs', title: 'Contact Us', link: '/contact-us' },
   ];
 
   return (
     <nav
       className="navbar fixed-top navbar-expand-lg"
-      style={{ backgroundColor: "#e3f2fd", boxShadow: "0 5px 5px #e1e1e1" }}
+      style={{ backgroundColor: '#e3f2fd', boxShadow: '0 5px 5px #e1e1e1' }}
     >
       <div className="container-fluid">
         <Link className="navbar-brand" href="/">
@@ -40,7 +45,7 @@ function NavBar(props) {
             {navItems.map(({ key, title, link }) => (
               <li className="nav-item" key={key}>
                 <Link
-                  className={`nav-link ${activeLink === key ? "active" : ""}`}
+                  className={`nav-link ${activeLink === key ? 'active' : ''}`}
                   aria-current="page"
                   href={link}
                 >

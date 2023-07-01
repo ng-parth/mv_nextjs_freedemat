@@ -1,10 +1,15 @@
 export const FIRM_NAME = 'Free Demat A/C Services';
+export const OPEN_DEMAT_LINK =
+  'https://trade.angelone.in/?rne_source=B2B_NXT&btype=SVRQUA&referrer=NRRAA::rne_source=B2B_NXT::btype=SVRQUA&source_caller=api&pid=KYC&SbTag=TlJSQUE=&deep_link_value=referrer%3DNRRAA%3A%3Arne_source%3DB2B_NXT%3A%3Abtype%3DSVRQUA&c=referral';
 export const SERVICES = [
   {
     key: 'demat',
     title: 'Open a Demat Account',
     details: `${FIRM_NAME} offers a hassle-free process to open a demat account, which is necessary to hold and trade securities in India.`,
     icon: '',
+    imageUrl: '/assets/images/demat-ac-services.jpeg',
+    link: OPEN_DEMAT_LINK,
+    cta: 'Open Free Demat Account',
     cardBorderClass: 'text-bg-info',
   },
   {
@@ -12,29 +17,34 @@ export const SERVICES = [
     title: 'Lost Share Recovery',
     details: `${FIRM_NAME} assists clients in recovering lost or unclaimed shares through the <b>Investor Education and Protection Fund (IEPF)</b>`,
     icon: '',
-    cardBorderClass: 'text-bg-secondary',
+    imageUrl: '/assets/images/iepf.jpeg',
+    link: '/recover-lost-shares-from-iepf',
+    cta: 'View More',
+    cardBorderClass: 'text-bg-warning',
   },
   {
     key: 'finPlan',
     title: 'Financial Planning',
     details: `${FIRM_NAME} helps clients develop a holistic financial plan to achieve long-term financial stability and security.`,
     icon: '',
-    cardBorderClass: 'text-bg-warning',
+    imageUrl: '/assets/images/planning.jpg',
+    cardBorderClass: 'text-bg-dark',
   },
   {
     key: 'invMgmt',
     title: 'Investment Management',
     details: `${FIRM_NAME} provides expert investment advice and management services to help clients maximize returns and minimize risks.`,
     icon: '',
+    imageUrl: '/assets/images/investment.jpg',
     cardBorderClass: 'text-bg-primary',
   },
-  {
-    key: 'tax',
-    title: 'Tax Planning',
-    details: `${FIRM_NAME} offers customized tax planning solutions to help clients optimize their tax liabilities and take advantage of available tax-saving opportunities.`,
-    icon: '',
-    cardBorderClass: 'text-bg-dark',
-  },
+  // {
+  //   key: 'tax',
+  //   title: 'Tax Planning',
+  //   details: `${FIRM_NAME} offers customized tax planning solutions to help clients optimize their tax liabilities and take advantage of available tax-saving opportunities.`,
+  //   icon: '',
+  //   cardBorderClass: 'text-bg-secondary',
+  // },
 ];
 
 export const INQUIRY_SUBJECTS = [
