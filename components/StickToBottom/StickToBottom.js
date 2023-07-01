@@ -15,7 +15,8 @@ const StickToBottom = (props) => {
       target={target}
       className={`${ctaClass} btn sticky-btn`}
     >
-      {cta} {target === '_blank' && <i class="bi bi-box-arrow-up-right"></i>}
+      {cta}{' '}
+      {target === '_blank' && <i className="bi bi-box-arrow-up-right"></i>}
     </Link>
   );
 };
