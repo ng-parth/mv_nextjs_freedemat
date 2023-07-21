@@ -84,6 +84,7 @@ const ContactUs = (props) => {
     }
   };
   useEffect(setDefaultQuery, []);
+  const Required = () => <span style={{ color: 'red' }}>*</span>;
   return (
     <div className="main-container">
       <Head>
@@ -109,7 +110,7 @@ const ContactUs = (props) => {
                 >
                   <div className="col-sm-12">
                     <label htmlFor="name" className="form-label">
-                      Name:
+                      Name: <Required />
                     </label>
                     <input
                       type="text"
@@ -126,7 +127,7 @@ const ContactUs = (props) => {
                   </div>
                   <div className="col-md-12">
                     <label htmlFor="email" className="form-label">
-                      Email:
+                      Email: <Required />
                     </label>
                     <input
                       type="email"
@@ -142,7 +143,7 @@ const ContactUs = (props) => {
                   </div>
                   <div className="col-md-12">
                     <label htmlFor="phoneNo" className="form-label">
-                      Phone No:
+                      Phone No: <Required />
                     </label>
                     <div className="input-group has-validation">
                       <span className="input-group-text" id="phoneNoPrepend">
@@ -176,14 +177,16 @@ const ContactUs = (props) => {
                       disabled={isFormDisabled}
                     />
                     <div className="form-text">
-                      {`PAN is compulsory document for opening a demat account. 
-                      You details are secure with us. 
-                      We don't share your PAN No with third party agencies.`}
+                      PAN No is important document for opening a demat account.
+                      <br />
+                      You details are secure with us. <br />
+                      We do not share your PAN No with third party agencies.
+                      <br />
                     </div>
                   </div>
                   <div className="col-sm-12">
                     <label htmlFor="inquirySubject" className="form-label">
-                      Inquiry Subject:
+                      Inquiry Subject: <Required />
                     </label>
                     <select
                       className="form-select"
@@ -203,7 +206,7 @@ const ContactUs = (props) => {
                   </div>
                   <div className="col-sm-12">
                     <label htmlFor="query" className="form-label">
-                      Query:
+                      Query: <Required />
                     </label>
                     <textarea
                       className="form-control"
@@ -229,8 +232,9 @@ const ContactUs = (props) => {
                         className="form-check-label"
                         htmlFor="invalidCheck"
                       >
-                        Agree to terms and conditions. We do not spam you or
-                        share your details with external agencies.
+                        By submitting this form, you agree to our terms and
+                        conditions. We do not spam you or share your details
+                        with external agencies.
                       </label>
                       <div className="invalid-feedback">
                         You must agree before submitting.
