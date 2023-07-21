@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavBar from '../components/NavBar/NavBar';
 import {
   INQUIRY_SUBJECTS,
@@ -6,6 +6,7 @@ import {
   FIRM_NAME,
 } from '../services/constants';
 import Head from 'next/head';
+import { getQueryParams } from '../services/utils';
 
 const ContactUs = (props) => {
   const title = `Contact ${FIRM_NAME}`;
@@ -19,7 +20,14 @@ const ContactUs = (props) => {
     const form = document.getElementById(FORM);
     if (form.checkValidity()) {
       form.classList.add('was-validated');
-      const formElems = ['name', 'email', 'phoneNo', 'inquirySubject', 'query'];
+      const formElems = [
+        'name',
+        'email',
+        'phoneNo',
+        'panNo',
+        'inquirySubject',
+        'query',
+      ];
       setFormDisabled(true);
       const formValues = {};
       formElems.map((id) => {
@@ -61,7 +69,21 @@ const ContactUs = (props) => {
         });
     }
   };
-
+  const setDefaultQuery = () => {
+    document.getElementById('name').setAttribute('autofocus', '');
+    const inquiryParam =
+      new URLSearchParams(window?.location?.search)?.get('inquiryCode') ||
+      'other';
+    if (inquiryParam) {
+      const selectBox = document.getElementById('inquirySubject');
+      for (let i = 0; i < INQUIRY_SUBJECTS.length; i++) {
+        if (INQUIRY_SUBJECTS[i].key === inquiryParam) {
+          selectBox.selectedIndex = i;
+        }
+      }
+    }
+  };
+  useEffect(setDefaultQuery, []);
   return (
     <div className="main-container">
       <Head>
@@ -95,6 +117,7 @@ const ContactUs = (props) => {
                       id="name"
                       required
                       disabled={isFormDisabled}
+                      autoFocus={true}
                     />
                     {/* <div className="valid-feedback">Looks good!</div> */}
                     <div className="invalid-feedback">
@@ -140,6 +163,22 @@ const ContactUs = (props) => {
                       <div className="invalid-feedback">
                         Please enter valid phone no.
                       </div>
+                    </div>
+                  </div>
+                  <div className="col-md-12">
+                    <label htmlFor="panNo" className="form-label">
+                      PAN No:
+                    </label>
+                    <input
+                      type="text"
+                      id="panNo"
+                      className="form-control"
+                      disabled={isFormDisabled}
+                    />
+                    <div className="form-text">
+                      {`PAN is compulsory document for opening a demat account. 
+                      You details are secure with us. 
+                      We don't share your PAN No with third party agencies.`}
                     </div>
                   </div>
                   <div className="col-sm-12">

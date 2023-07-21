@@ -1,6 +1,6 @@
 export const FIRM_NAME = 'Free Demat A/C Services';
-export const OPEN_DEMAT_LINK =
-  'https://trade.angelone.in/?rne_source=B2B_NXT&btype=SVRQUA&referrer=NRRAA::rne_source=B2B_NXT::btype=SVRQUA&source_caller=api&pid=KYC&SbTag=TlJSQUE=&deep_link_value=referrer%3DNRRAA%3A%3Arne_source%3DB2B_NXT%3A%3Abtype%3DSVRQUA&c=referral';
+export const OPEN_DEMAT_LINK = '/contact-us?inquiryCode=openDemat';
+// 'https://trade.angelone.in/?rne_source=B2B_NXT&btype=SVRQUA&referrer=NRRAA::rne_source=B2B_NXT::btype=SVRQUA&source_caller=api&pid=KYC&SbTag=TlJSQUE=&deep_link_value=referrer%3DNRRAA%3A%3Arne_source%3DB2B_NXT%3A%3Abtype%3DSVRQUA&c=referral';
 export const SERVICES = [
   {
     key: 'demat',
@@ -49,8 +49,12 @@ export const SERVICES = [
 
 export const INQUIRY_SUBJECTS = [
   {
+    key: 'openDemat',
+    title: 'Open Demat A/C',
+  },
+  {
     key: 'dematServices',
-    title: 'Open Demat A/C or related services',
+    title: 'Query regarding Demat A/C related services',
   },
   {
     key: 'iepf',
